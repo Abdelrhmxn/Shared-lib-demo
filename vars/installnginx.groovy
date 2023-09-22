@@ -1,3 +1,13 @@
 def call(){
- sh "apt install nginx"
+ pipeline {
+    agent { label 'Worker' }
+
+    stages {
+        stage('install nginx') {
+            steps {
+                sh "apt install nginx"
+            }
+        }
+    }
+} 
 }
