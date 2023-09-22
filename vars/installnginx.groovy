@@ -1,13 +1,26 @@
-def call(){
- pipeline {
-    agent { label 'Worker' }
+
+def call()  {
+  pipeline {
+    agent any
 
     stages {
-        stage('install nginx') {
+        stage('Build') {
             steps {
-                sh "apt install nginx"
+                echo 'BUILD'
             }
         }
+        stage('TEST') {
+            steps {
+                echo 'TEST'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploy'
+                bye 'pipeline'
+            }
+        }        
     }
-} 
 }
+}
+  
