@@ -16,8 +16,7 @@ def call()  {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploy'
-                bye 'pipeline'
+                echo 'Deploy
             }
         }        
     }
